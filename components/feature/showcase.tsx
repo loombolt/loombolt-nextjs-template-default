@@ -1,20 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useCounterStore } from "@/store/counter-store";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
+import { findWelcomeRecordById } from "@/db/loomboltdb-function-tutorial";
 
 export function LibraryShowcase() {
   const { count, increment, decrement, reset } = useCounterStore();
   const [scale, setScale] = useState(0.5);
+  const [DBMessage, setDBMessage] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const { data, error } = await findWelcomeRecordById(1);
+      if (error) {
+        setDBMessage('Error fetching data from DB');
+      } else {
+        setDBMessage(data.message);
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
   
   return (
     <div 
-      className="w-full max-w-5xl mx-auto"
+      className="w-full max-w-5xl mx-auto space-y-4"
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="shadow-none">
@@ -110,6 +128,18 @@ export function LibraryShowcase() {
           </CardContent>
         </Card>
       </div>
+      <Card className="shadow-none">
+          <CardHeader className="flex flex-col items-center">
+            <CardTitle>Loombolt DB</CardTitle>
+            <CardDescription>Lightweight NoSQL Database</CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-col items-center">
+             
+            <code className="font-mono bg-muted py-1 px-2 rounded text-sm text-muted-foreground text-center whitespace-pre-wrap">
+              {loading ? 'Fetching data...' : DBMessage || 'No data found for ID 1.'}
+            </code>
+          </CardContent>
+        </Card>
     </div>
   );
 }
