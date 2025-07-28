@@ -4,7 +4,7 @@ import { DB } from '@loombolt/db';
 
 // Replace 'YOUR_PUBLIC_KEY' with your actual Loombolt project's public key.
 // You can often find this in your Loombolt project settings.
-const db = new DB({ publicKey: 'pk_1a52e89cea5e4a38902b761a9da7f2dc', loomboltDBURL: 'https://api.loombolt.com' });
+const db = new DB({ publicKey: process.env.NEXT_PUBLIC_LOOMBOLTDB_PUBLIC_KEY!});
 
 // Hardcode the collection to 'welcome' for this set of functions.
 const welcomeCollection = db.collection('welcome');
