@@ -37,8 +37,8 @@ export function LibraryShowcase() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="shadow-none">
           <CardHeader>
-            <CardTitle>Shadcn UI</CardTitle>
-            <CardDescription>Beautiful, accessible UI components</CardDescription>
+            <CardTitle>Component Foundation</CardTitle>
+            <CardDescription>A solid set of pre-made UI elements to build with.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
             <Badge variant="outline">Components</Badge>
@@ -55,7 +55,7 @@ export function LibraryShowcase() {
         
         <Card className="shadow-none">
           <CardHeader>
-            <CardTitle>Motion</CardTitle>
+            <CardTitle>Animations</CardTitle>
             <CardDescription>Silky smooth animation</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -86,8 +86,8 @@ export function LibraryShowcase() {
         
         <Card className="shadow-none">
           <CardHeader>
-            <CardTitle>Zustand Store</CardTitle>
-            <CardDescription>Simple state management</CardDescription>
+            <CardTitle>Interactive Elements</CardTitle>
+            <CardDescription>Making your application's components interactive.</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col items-center gap-4">
             <motion.div 

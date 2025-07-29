@@ -1,3 +1,8 @@
+/*
+  This is an example page that you can edit.
+  Feel free to replace the entire content of this file to build your own page.
+  To learn how to use the database, check the functions in `db/loomboltdb-function-tutorial.ts`.
+*/
 import Image from "next/image";
 import { LibraryShowcase } from "@/components/feature/showcase";
 import Link from "next/link";
@@ -19,15 +24,10 @@ export default function Home() {
           />
         </div>
           <h1 className="text-3xl font-bold tracking-tight mb-4">Loombolt Template</h1>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-muted-foreground">
             Get Started by Chatting with AI to build your app.
           </p>
         
-          <div className="inline-flex items-center rounded-md border px-3 py-1 text-sm">
-            <code className="font-mono font-semibold">
-              app/page.tsx
-            </code>
-          </div>
         </div>
         
         <div className="w-full">
