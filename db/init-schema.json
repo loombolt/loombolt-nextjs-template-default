@@ -1,0 +1,10 @@
+{
+    "schema": [
+				{
+					"fields": [
+						{ "name": "message", "type": "text", "label": "Message" },
+						{ "name": "recordId", "type": "number", "label": "Record ID" }
+					]
+				}
+			]
+}
