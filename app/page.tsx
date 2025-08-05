@@ -1,6 +1,6 @@
 /*
-  This is an example page that you can edit.
-  Feel free to replace the entire content of this file to build your own page.
+  This is an example page that you must replace as this is just a template.
+  You must replace the entire content of this file to build your own page.
   To learn how to use the database, check the functions in `db/loomboltdb-function-tutorial.ts`.
 */
 import Image from "next/image";
